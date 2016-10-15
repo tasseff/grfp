@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+\usepackage[tiny,compact]{titlesec}
+\titleformat{\section}[runin]{\bfseries}{}{}{}[]
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{paralist}
+\usepackage{times}
+\renewenvironment{thebibliography}[1]{
+  \section*{\refname}
+  \let\par\relax\let\newblock\relax
+  \inparaenum[{[}1{]}]}{\endinparaenum}
+\usepackage[font=footnotesize]{caption}
+\usepackage[margin=1in]{geometry}
+\usepackage[singlespacing]{setspace}
+
+% I do not like the idea of creating specific sections that address these
+% criteria. In my opinion, the personal and research statements should tell a
+% story. It's easier to tell a compelling story if we simply sprinkle in labels
+% of Intellectual Merit and Broader Impacts instead of basing the entire
+% structure of the application around them.  Of course, others may disagree.
+\newcommand{\im}{\textsuperscript{\textbf{IM}~}}
+\newcommand{\bi}{\textsuperscript{\textbf{BI}~}}
+\renewcommand{\refname}{\textbf{BI} \textnormal{Broader Impacts.} \textbf{IM} \textnormal{Intellectual Merit.}}
+
+\pagenumbering{gobble}
+\begin{document}
+%\input{personal/personal.tex}
+\input{research/research.tex}
+\footnotesize
+\bibliographystyle{style}
+\bibliography{bibliography/bibliography}
+\end{document}
